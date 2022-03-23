@@ -10,7 +10,7 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to render_template('index')
     end
     it 'body has the correct text' do
-      expect(response.body).to include('Post #1')
+      expect(response.body).to include('This will be index content for posts')
     end
   end
 
@@ -23,7 +23,7 @@ RSpec.describe 'Posts', type: :request do
       expect(response).to render_template('show')
     end
     it 'body has the correct text' do
-      expect(response.body).to include('Post #1 by username')
+      expect(response.body).to include('This will be show content for posts')
     end
   end
 end
