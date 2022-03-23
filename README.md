@@ -1,24 +1,42 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Rails Blog app
 
-Things you may want to cover:
+- This Blog app is a classic example of a blog website. This is a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+## Built With
 
-* Ruby version
+- Ruby on Rails
 
-* System dependencies
+## Getting Started
 
-* Configuration
+- To get a local copy up and running follow these simple example steps.
 
-* Database creation
+### Prerequisites
+- Have Ruby and Rails installed in your system.
 
-* Database initialization
+### Install
+- Open your terminal
+- Run `git@github.com:Mre55/ror-blog-app.git`
 
-* How to run the test suite
+### Usage
 
-* Services (job queues, cache servers, search engines, etc.)
+- Navigate to the `ror-blog-app`
+- Start the server `rails s`
+- And open localhost in your website `http://127.0.0.1:3000/`
+## Author
 
-* Deployment instructions
+👤 **Mihreteab Misganaw Aride**
 
-* ...
+- GitHub: [@Mre55](https://github.com/Mre55)
+- Twitter: [@MreMisganaw](https://twitter.com/MreMisganaw)
+- LinkedIn: [Mihreteab Aride](https://www.linkedin.com/in/mihreteab-aride-86249812b/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
