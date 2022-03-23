@@ -10,7 +10,7 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template('index')
     end
     it 'body has the correct text' do
-      expect(response.body).to include('User name')
+      expect(response.body).to include('This will be index content for user')
     end
   end
 
@@ -23,7 +23,7 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template('show')
     end
     it 'body has the correct text' do
-      expect(response.body).to include('See all posts')
+      expect(response.body).to include('This will be show content for user')
     end
   end
 end
