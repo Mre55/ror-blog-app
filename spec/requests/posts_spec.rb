@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
     before { get '/users/1/posts' }
-    it 'is a success' do
+    it 'check if response status is correct' do
       expect(response).to have_http_status(:ok)
     end
     it "renders 'index' template" do
@@ -16,7 +16,7 @@ RSpec.describe 'Posts', type: :request do
 
   describe 'GET users/index/posts/1' do
     before { get '/users/1/posts/1' }
-    it 'is a success' do
+    it 'check if response status is correct' do
       expect(response).to have_http_status(:ok)
     end
     it "renders 'show' template" do

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Users', type: :request do
   describe 'GET /index' do
     before { get '/users' }
-    it 'is a success' do
+    it 'check if response status is correct' do
       expect(response).to have_http_status(:ok)
     end
     it "renders 'index' template" do
@@ -16,7 +16,7 @@ RSpec.describe 'Users', type: :request do
 
   describe 'GET /index/id' do
     before { get '/users/1' }
-    it 'is a success' do
+    it 'check if response status is correct' do
       expect(response).to have_http_status(:ok)
     end
     it "renders 'show' template" do
