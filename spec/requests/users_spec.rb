@@ -10,7 +10,7 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template('index')
     end
     it 'body has the correct text' do
-      expect(response.body).to include('This will be index content for user')
+      expect(response.body).to include('Number of posts')
     end
   end
 
