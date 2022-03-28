@@ -6,5 +6,4 @@ class Like < ApplicationRecord
     counter = post.likes.count('id')
     post.update(likes_counter: counter)
   end
-
 end

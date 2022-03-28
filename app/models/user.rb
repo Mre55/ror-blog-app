@@ -4,7 +4,6 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: :author_id
 
   def most_three_recent_posts
-    Post.where(author_id: self.id).order(created_at: :desc).limit(3)
+    Post.where(author_id: id).order(created_at: :desc).limit(3)
   end
-
 end
