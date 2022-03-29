@@ -2,9 +2,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: azure;
+  color: black;
 }
 
 body {
-  background-color: darkslategrey;
+  background-color: #e5e5e5;
 }
