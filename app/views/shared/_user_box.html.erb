@@ -1,0 +1,13 @@
+<div class="user-box my-2 p-2 d-flex">
+  <div class="user-photo border w-25" style="background-color:#C4C4C4">
+    <img
+      src=<%= photo %>
+      alt="Profile image"
+      class="w-100"
+    />
+</div>
+  <div class="user-info border mx-2 w-75 p-2 rounded-end " style="background-color:#C4C4C4">
+    <h1><%= name %></h1>
+      <p class="text-end"> Number of posts: <%= post_num ? post_num : "0" %> </p>
+    </div>
+  </div>
