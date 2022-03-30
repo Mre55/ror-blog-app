@@ -10,7 +10,6 @@ class PostsController < ApplicationController
     @comments = @post.comments.all
   end
 
-
   def new
     @user = current_user
   end
@@ -40,5 +39,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :text)
   end
-
 end
