@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @user = current_user
+    @post = Post.new
   end
 
   def create
@@ -28,10 +28,13 @@ class PostsController < ApplicationController
   def like
     @post = Post.find(params[:id])
     @user = User.find(params[:user_id])
-    @current_user = current_user
-    @like = @current_user.likes.new(post_id: @post.id)
-    @like.save
-    redirect_to user_post_path(@user, @post)
+    @like = current_user.likes.new(post_id: @post.id)
+
+    if @like.save
+      redirect_to user_post_path(@user, @post)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
