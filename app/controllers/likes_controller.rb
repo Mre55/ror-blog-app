@@ -1,5 +1,4 @@
 class LikesController < ApplicationController
-  
   def create
     @user = User.find(params[:user_id])
     @post = Post.find(params[:post_id])
@@ -12,5 +11,4 @@ class LikesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
 end
