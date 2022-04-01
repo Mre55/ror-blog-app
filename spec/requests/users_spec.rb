@@ -10,20 +10,8 @@ RSpec.describe 'Users', type: :request do
       expect(response).to render_template('index')
     end
     it 'body has the correct text' do
-      expect(response.body).to include('Number of posts')
+      expect(response.body).to include('Ruby on Rails Blog App')
     end
   end
 
-  describe 'GET /index/id' do
-    before { get '/users/1' }
-    it 'check if response status is correct' do
-      expect(response).to have_http_status(:ok)
-    end
-    it "renders 'show' template" do
-      expect(response).to render_template('show')
-    end
-    it 'body has the correct text' do
-      expect(response.body).to include('This will be show content for user')
-    end
-  end
 end
