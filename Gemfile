@@ -46,6 +46,8 @@ gem 'bootsnap', require: false
 # gem "sassc-rails"
 gem 'sass-rails'
 
+gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -66,6 +68,8 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+gem 'bullet', group: 'development'
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]

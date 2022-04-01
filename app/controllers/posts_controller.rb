@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts_with_comments = @user.posts.all.map { |post| { post:, comments: post.five_recent_comments } }
+    @posts_with_comments = @user.posts.map { |post| { post:, comments: post.five_recent_comments } }
   end
 
   def show
@@ -17,24 +17,15 @@ class PostsController < ApplicationController
   def create
     @user = current_user
     @post = @user.posts.new(post_params)
+    @post.commentsCounter = 0
+    @post.likesCounter = 0
 
     if @post.save
-      redirect_to user_post_path(@user, @post)
+      flash[:notice] = 'Post was successfully created'
     else
-      render :new, status: :unprocessable_entity
+      flash[:alert] = @post.errors.messages
     end
-  end
-
-  def like
-    @post = Post.find(params[:id])
-    @user = User.find(params[:user_id])
-    @like = current_user.likes.new(post_id: @post.id)
-
-    if @like.save
-      redirect_to user_post_path(@user, @post)
-    else
-      render :new, status: :unprocessable_entity
-    end
+    redirect_to user_post_path(@user, @post)
   end
 
   private
