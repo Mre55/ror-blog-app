@@ -19,22 +19,11 @@ class PostsController < ApplicationController
     @post = @user.posts.new(post_params)
 
     if @post.save
-      redirect_to user_post_path(@user, @post)
+      flash[:notice] = 'Post was successfully created'
     else
-      render :new, status: :unprocessable_entity
+      flash[:alert] = @post.errors.messages
     end
-  end
-
-  def like
-    @post = Post.find(params[:id])
-    @user = User.find(params[:user_id])
-    @like = current_user.likes.new(post_id: @post.id)
-
-    if @like.save
-      redirect_to user_post_path(@user, @post)
-    else
-      render :new, status: :unprocessable_entity
-    end
+    redirect_to user_post_path(@user, @post)
   end
 
   private
