@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def disp_alerts
     if notice
       render 'layouts/notice'
@@ -7,5 +6,4 @@ module ApplicationHelper
       render 'layouts/alert'
     end
   end
-
 end

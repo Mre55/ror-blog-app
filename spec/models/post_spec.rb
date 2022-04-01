@@ -34,5 +34,4 @@ RSpec.describe Post, type: :model do
     @post.likesCounter = -3
     expect(@post).to_not be_valid
   end
-  
 end

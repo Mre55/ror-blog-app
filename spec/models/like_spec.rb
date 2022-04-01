@@ -17,5 +17,4 @@ RSpec.describe Like, type: :model do
   end
 
   before { subject.save }
-
 end

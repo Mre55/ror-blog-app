@@ -13,5 +13,4 @@ RSpec.describe 'Users', type: :request do
       expect(response.body).to include('Ruby on Rails Blog App')
     end
   end
-
 end
