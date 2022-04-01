@@ -6,9 +6,10 @@ class LikesController < ApplicationController
     @like.post = @post
 
     if @like.save
-      redirect_to user_post_path(@user, @like)
+      flash[:notice] = 'You successfully like this post'
     else
-      render :new, status: :unprocessable_entity
+      flash[:alert] = @like.errors.messages
     end
+    redirect_to user_post_path(@user, @like)
   end
 end
