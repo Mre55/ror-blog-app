@@ -4,6 +4,10 @@ class Comment < ApplicationRecord
 
   after_save :update_post_comments
 
+  def three_recent_posts
+    posts.order(created_at: :desc).limit(quantity)
+  end
+
   def update_post_comments
     counter = post.comments.count('id')
     post.update(commentsCounter: counter)
