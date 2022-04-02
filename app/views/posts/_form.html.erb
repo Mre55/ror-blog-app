@@ -1,4 +1,4 @@
-<%= form_with model: [user, user.posts.build], :html => { :class => "d-flex flex-column align-items-center"} do |form| %>
+<%= form_with model: @post, url: '/posts', :html => { :class => "d-flex flex-column align-items-center"} do |form| %>
   <div>
     <%= form.text_field :title, class: "form-control m-2", 
    placeholder: "Title..." %>
@@ -10,6 +10,6 @@
   </div>
 
   <div>
-    <%= form.submit "Post", class: "btn btn-secondary" %>
+    <%= form.submit "Create Post", class: "btn btn-secondary" %>
   </div>
 <% end %>
