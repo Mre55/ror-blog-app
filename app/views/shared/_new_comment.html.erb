@@ -1,7 +1,6 @@
 <%= form_with model: [user, post, post.comments.build], :html => { :class => "d-flex flex-column align-items-center"} do |form| %>
-  <div>
-    <%= form.text_field :text, class: "form-control m-2", 
-   placeholder: "Write something..." %>
+  <div class="w-50">
+    <%= form.text_area :text, class: "form-control m-2", placeholder: "Write your comment..."%>
   </div>
 
   <div>
