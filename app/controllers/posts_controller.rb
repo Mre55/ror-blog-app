@@ -11,19 +11,34 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @user = User.find(params[:user_id])
+    @post = @user.posts.new
   end
 
   def create
-    @user = current_user
+    @user = User.find(params[:user_id])
     @post = @user.posts.new(post_params)
     @post.commentsCounter = 0
     @post.likesCounter = 0
 
     if @post.save
       flash[:notice] = 'Post was successfully created'
+      redirect_to user_post_path(@user, @post)
     else
-      flash[:alert] = @post.errors.messages
+      flash.now[:alert] = @post.errors.messages
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def like
+    @post = Post.find(params[:id])
+    @user = User.find(params[:user_id])
+    @like = current_user.likes.new(post_id: @post.id)
+
+    if @like.save
+      redirect_to user_post_path(@user, @post)
+    else
+      render :new, status: :unprocessable_entity
     end
     redirect_to user_post_path(@user, @post)
   end

@@ -2,7 +2,7 @@
   <h2><%= @post.title %> by <%= @post.author.name %></h2>
   <p class="text-end">Comments: <%= @post.commentsCounter ? @post.commentsCounter : "0" %> Likes:<%= @post.likesCounter ? @post.likesCounter : "0" %></p>
   <p><%= @post.text  %></p>
-  <%= button_to 'Like', like_path(user_id: @user.id, post_id: @post.id), method: "post", class: 'btn btn-primary' %>
+  <%= button_to 'Like', like_path(user_id: @user.id, post_id: @post.id), method: "put", class: 'btn btn-primary' %>
 </div>
 <% @comments.includes(:author).each do |comment| %>
   <div class="border p-2 " style="background-color:#C4C4C4">
