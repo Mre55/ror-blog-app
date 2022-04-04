@@ -1,13 +1,13 @@
-<div class="user-box my-2 p-2 d-flex">
-  <div class="user-photo border w-25" style="background-color:#C4C4C4">
+<div class="user-box my-2 py-2 d-flex ">
+  <div class="user-photo border w-25 rounded-start" style="background-color:#1156A6">
     <img
       src=<%= photo %>
       alt="Profile image"
-      class="w-100"
+      class="w-100 text-light"
     />
-</div>
-  <div class="user-info border mx-2 w-75 p-2 rounded-end " style="background-color:#C4C4C4">
-    <h1><%= name %></h1>
-      <p class="text-end"> Number of posts: <%= post_num ? post_num : "0" %> </p>
-    </div>
   </div>
+  <div class="w-75 p-2 rounded-end" style="background-color:#1156A6">
+    <h1 class="text-light"><%= name %></h1>
+      <p class="text-light text-end"> Number of posts: <%= post_num ? post_num : "0" %> </p>
+  </div>
+</div>
