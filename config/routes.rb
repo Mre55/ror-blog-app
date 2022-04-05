@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-  root "users#index"
+  devise_for :users
 
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :show, :new, :create ] do
@@ -10,5 +9,7 @@ Rails.application.routes.draw do
 
   get '/posts/new'
   put '/post/:id/like', to: 'posts#like', as: 'like'
+
+  root "users#index"
 
 end

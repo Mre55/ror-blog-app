@@ -19,8 +19,10 @@
 
     <%= render 'headerFooter/header' %>
 
-    <div class="container">
-      <%= disp_alerts %>
+    <div class="container d-flex flex-column">
+      <%# <%= disp_alerts %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <%= yield %>
     </div>
 

@@ -4,7 +4,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @shown_user = User.find(params[:id])
-    @recent_posts = @shown_user.three_recent_posts
+    if params[:id] == 'sign_out'
+      sign_out
+      redirect_to root_path
+    else
+      @shown_user = User.find(params[:id])
+      @recent_posts = @shown_user.three_recent_posts
+    end
   end
 end
